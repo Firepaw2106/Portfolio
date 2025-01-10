@@ -3,18 +3,78 @@ body{
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(180deg, rgb(104, 180, 243), rgb(233, 39, 104));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#headline h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#app{
+#headline{
+   
     width: 100%;
-    max-width: 540px;
-    background: white;
+    min-width: 540px;
+    background-color: rgb(255, 255, 255);
     border-radius: 40px;
     padding: 10px;
+    padding: 10px;
+ 
+
+}
+
+#taskInput{
+    border-radius: 40px;
+    background-color: rgb(250, 210, 217);
+    border: none;
+    padding: 10px;
+    display:inline-flex;
+   margin-left: 34%;
+    
+}
+
+button{
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(205, 210, 252);
+    color: rgb(39, 122, 150);
+    padding: 10px;
+
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(91, 133, 196);
+    color: white;
+}
+
+#listContainer{
+    background-color: white;
+    border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    margin: 30px;
+    
+}
+li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px solid black;
+    
+}
 
+input[type = "checkbox"]{
+    appearance: none;
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 3px solid black;
 }
 

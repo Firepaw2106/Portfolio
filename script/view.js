@@ -1,10 +1,10 @@
 function updateView(){
     view.innerHTML = /*HTML*/`
     
-    <div> 
+    <div id= "headline"> 
     <h1> TO DO LIST</h1>
-    <input type= "text" placeholder= "Skriv inn">
-    <button>Submit</button>
+    <input id="taskInput" type="text" placeholder= "" onchange="this.value">
+    <button id="addButton" onclick="addTask()">ADD</button>
     </div>
 
     `;
