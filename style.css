@@ -32,8 +32,18 @@ body{
     border: none;
     padding: 10px;
     display:inline-flex;
-   margin-left: 34%;
+    margin-left: 34%;
     
+}
+#timeInput{
+    border: none;
+    background-color: rgb(205, 210, 252);
+    border-radius: 40px;
+    padding: 8px;
+    display: inline-flex;
+    margin-left: 34%;
+    margin-top: 10px;
+
 }
 
 button{
@@ -50,7 +60,7 @@ button:hover{
     color: white;
 }
 
-#listContainer{
+#list{
     background-color: white;
     border-radius: 40px;
     display: flex;
@@ -59,10 +69,10 @@ button:hover{
     padding: 10px;
     padding-left: 50px;
     margin: 30px;
-    border: 3px solid black;
+    
     
 }
-li{
+#task{
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -70,11 +80,11 @@ li{
     user-select: none;
     cursor: pointer;
     position: relative;
-    border: 3px solid black;
+    
     
 }
 
-li::before {
+#task::before {
     content: '';
     position: absolute;
     background: rgb(190, 190, 190);
@@ -90,11 +100,11 @@ li::before {
     text-decoration: line-through;
 }
 
-.checked::before{
+#task.checked::before {
     background-color: pink;
     background-image: url(images/tick_icon.png);
     background-size: cover;
-background-position: center;
+    background-position: center;
 }
 
 #deliteIcon{
@@ -107,4 +117,9 @@ background-position: center;
 #deliteIcon:hover{
     cursor: pointer;
     color:rgb(131, 124, 143);
+}
+
+#time{
+
+   padding-left: 5px;
 }

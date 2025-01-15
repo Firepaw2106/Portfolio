@@ -1,33 +1,30 @@
-function addTask(){
-    const input = document.getElementById("taskInput").value;
 
-   if(input==="") {
-    alert("Task emety");
+const view= document.getElementById("app")
+let taskInput = document.getElementById("taskInput")
+let timeInput = document.getElementById("timeInput")
+let descriptInput = document.getElementById("descriptInput")
 
-   }
-   else{
-    view.innerHTML += /*HTML*/`
-    <div id= "listContainer">
-    <div id= "deliteIcon"onclick="deliteTask()">\u00d7</div>
-    <li id= "task" onclick= "checkToggle()">${input}</li>
-    
-    </div>
-    `;
-   }
+function addtask(){
+
+    if(taskInput.value && timeInput.value && descriptInput.value === ""){
+        alert("Please fill out missing areas");
+    }else{
+    //   createTask()
+    }
+}
+function createTask(){
+
 }
 
-function deliteTask(){
+function deleteTask(){
 
-    document.getElementById("listContainer").remove(this);
+}
+
+function editTask(){
+
 }
 
 function checkToggle(){
-    let task = document.getElementById("task")
 
-    if(task.class =="checked"){
-        task.classList.remove("checked")
-    }else if(task.class == ""){
-        task.classList.add("checked")
-    }
 
 }
