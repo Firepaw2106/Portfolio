@@ -60,31 +60,35 @@ button:hover{
     color: white;
 }
 
-#list{
-    background-color: white;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    padding-left: 50px;
-    margin: 30px;
+#listContainer{
     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+    border: 3px solid black;
     
 }
-#task{
+.task{
+    background-color: white;
+    border-radius: 40px;
     list-style: none;
     display: flex;
     flex-direction: row;
-    align-items: left;
+    width: 500px;
+    height: 30px ;
+    padding: 10px;
+    padding-left: 20px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    border: 3px solid black;
     
     
 }
 
-#task::before {
+.task::before {
     content: '';
     position: absolute;
     background: rgb(190, 190, 190);
@@ -119,7 +123,7 @@ button:hover{
     color:rgb(131, 124, 143);
 }
 
-#time{
+.time{
 
    padding-left: 5px;
 }
