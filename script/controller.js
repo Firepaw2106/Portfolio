@@ -19,7 +19,7 @@ function createTask(){
     const task =document.createElement("li")
 
     task.innerHTML = /*HTML*/`
-    <div class="task" onclick="checkToggle(this)">
+    <div id="test" class="task" onclick="checkToggle()">
        <div class="text">${taskInput.value}</div>
        <div class="time">${timeInput.value}</div>
        <div class="deliteIcon">&#9747;</div>
@@ -38,10 +38,15 @@ function editTask(){
 
 }
 
-function checkToggle(this){
-    let task= document.getElementsByClassName("task");
-    if(task.classlist !== "checked")
-        task.classlist.toggle("checked")
-    else if(task.classlist == "checked")
-        task.classlist.remove("checked")
-}
+function checkToggle(){
+    
+    const collection = document.getElementsByClassName("task");
+    for (let i = 0; i < collection.length; i++){
+
+       if(task.classlist !== "checked"){
+           task.classlist.add("checked")
+       }else if(task.classlist == "checked"){
+           task.classlist.remove("checked")
+        }
+    }
+   }
