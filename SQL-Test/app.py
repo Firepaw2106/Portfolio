@@ -63,7 +63,7 @@ def add_task():
             '''INSERT INTO dbo.ToDoList (Title, Description, Deadline, Completed)
                OUTPUT INSERTED.id
                VALUES (?, ?, ?, ?)''',
-            (data['title'], 
+            (data['title'], data['description'],
              datetime.fromisoformat(data['deadline']) if data['deadline'] else None,
              False)
         )
@@ -71,4 +71,32 @@ def add_task():
         new_id = cursor.fetchone()[0]
         conn.commit()
         conn.close()
-        print()
+    except Exception as e:
+        print(f"Task added successfully with ID: {new_id}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/tasks/<int:id>', methods=['PUT'])
+def update_task(id):
+    data = request.json
+    conn =get_db_connection()
+    cursor= conn.cursor()
+    cursor.execute(
+        '''UPDATE ToDoList
+           SET Completed = ?
+           WHERE id = ?''',
+        (data['completed' ,id])
+    )
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
+
+@app.route('/task/<int:id>', methods=['DELETE'])
+def delete_task(id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM ToDoList WHERE id = ?',(id,))
+    conn.commit()
+    conn.close()
+    return jsonify[{'success': True}]
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
