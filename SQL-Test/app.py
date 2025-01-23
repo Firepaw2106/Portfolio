@@ -17,7 +17,7 @@ def get_db_connection():
     try:
         conn=pyodbc.connect(
             "Driver={ODBC Driver 17 for SQL Server};"
-            "Server=(localdb)\\local:"
+            "Server=DESKTOP-2U7I874\\MSSQLSERVER01:"
             "Database=ToDoList;"
             "Trusted_Connection=yes;"
         )
