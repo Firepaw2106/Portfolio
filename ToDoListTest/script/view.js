@@ -12,7 +12,7 @@ function updateView(){
 
     <div>
        
-      <ul id="listContainer"></ul>
+      <ul id="listContainer">${taskArray}</ul>
       
     </div>
 
